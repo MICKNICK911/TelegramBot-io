@@ -318,8 +318,8 @@ if __name__ == '__main__':
 
     # application.run_polling()
     bot = telegram.Bot(token=config.SECRET_KEY, )
-    bot.setWebhook('https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
     application.run_webhook(listen="0.0.0.0", port=PORT, url_path=config.SECRET_KEY)
-    application.bot.setWebhook('https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    application.bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
 
 
