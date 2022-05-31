@@ -316,10 +316,10 @@ if __name__ == '__main__':
     application.add_handler(start_handler)
     application.add_handler(message_handler)
 
-    # application.run_polling()
-    bot = telegram.Bot(token=config.SECRET_KEY, )
-    bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
-    application.run_webhook(listen="0.0.0.0", port=PORT, url_path=config.SECRET_KEY)
-    application.bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    application.run_polling()
+    # bot = telegram.Bot(token=config.SECRET_KEY, )
+    # bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    # application.run_webhook(listen="0.0.0.0", port=PORT, url_path=config.SECRET_KEY)
+    # application.bot.setWebhook(url='https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
 
 
