@@ -1,4 +1,5 @@
 import logging
+import telegram
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import ApplicationBuilder, CallbackContext, MessageHandler, filters, CommandHandler
 import config
@@ -316,5 +317,9 @@ if __name__ == '__main__':
     application.add_handler(message_handler)
 
     # application.run_polling()
-    application.run_webhook(listen="0.0.0.0", port=PORT, url_path=config.SECRET_KEY, webhook_url=' https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    bot = telegram.Bot(token=config.SECRET_KEY, )
+    bot.setWebhook('https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+    application.run_webhook(listen="0.0.0.0", port=PORT, url_path=config.SECRET_KEY)
+    application.bot.setWebhook('https://telegrambot-io-2022.herokuapp.com/' + config.SECRET_KEY)
+
 
